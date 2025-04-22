@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "todo":"aaa",
+        "completed":true
+    },
+    {
+        "id":2,
+        "todo":"bbb",
+        "completed":false
+    },
+    {
+        "id":3,
+        "todo":"ccc",
+        "completed":false
+    }
+]
