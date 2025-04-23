@@ -1,9 +1,32 @@
 import s from './Forms.module.css';
 
-const UncontrolledForm = () => {
+// Это закинуть в Апп
+//
+// const register = credentials => {
+//   console.log('Data received!');
+//   setTimeout(() => {
+//     console.log('Send data...');
+//   }, 1000);
+//   setTimeout(() => {
+//     console.log('User was registered successfully!');
+//     console.log(credentials);
+//   }, 2000);
+// };
+
+const UncontrolledForm = ({ register }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(e.target);
+    const form = e.target;
+    const name = form.elements.name.value;
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+    register({ email, name, password });
+    form.reset();
+  };
   return (
     <section className={s.formWrapper}>
-      <form className={s.form}>
+      <form onSubmit={handleSubmit} className={s.form}>
         <label className={s.label}>
           <span>Name:</span>
           <input className={s.input} name="name" placeholder="Enter the name" />
